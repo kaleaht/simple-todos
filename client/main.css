@@ -7,16 +7,13 @@ html {
 body {
   font-family: sans-serif;
   background-color: #EEEEEE;
-
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-
   padding: 0;
   margin: 0;
-
   font-size: 14px;
 }
 
@@ -130,23 +127,6 @@ li {
 .asdf-appear.asdf-appear-active {
   opacity: 1;
   transition: opacity 0.5s ease-in;
-}
-
-li .text {
-  margin-left: 10px;
-}
-
-li.checked {
-  color: #888;
-}
-
-li.checked .text {
-  text-decoration: line-through;
-}
-
-li.private {
-  background: #eee;
-  border-color: #ddd;
 }
 
 header .hide-completed {

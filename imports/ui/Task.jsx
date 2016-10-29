@@ -4,6 +4,7 @@ import moment from 'moment';
 import {Tasks} from '../api/tasks.js';
 import FontAwesome  from 'react-fontawesome';
 import Check from './Check.jsx';
+import css from './scss/Task.scss';
 
 export default class Task extends Component {
     constructor(props) {
@@ -27,7 +28,7 @@ export default class Task extends Component {
         moment.updateLocale('fi', fi);
 
         return (
-            <li className={taskClassName} style={styles.li}>
+            <li className={taskClassName} style={css}>
                 <div>
                     <Check
                         checked={this.props.task.checked}
@@ -36,37 +37,19 @@ export default class Task extends Component {
                     <span className="text">{this.props.task.text}</span>
                 </div>
                 <div>
-                    <span
-                        className="time"
-                        style={styles.time} >
+                    <span className="moment">
                         {moment(this.props.task.createdAt).fromNow()}
                     </span>
                     <FontAwesome
+                        className="times"
                         name="times"
                         onClick={this.deleteThisTask.bind(this)}
-                        style={styles.times} />
+                         />
                 </div>
             </li>
         );
     }
 }
-
-const styles = {
-    li: {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        marginTop: '10px',
-        boxShadow: '0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.19)'
-    },
-    time: {
-        marginRight: '5px',
-        color: '#797979'
-    },
-    times: {
-        color: '#797979'
-    }
-};
 
 Task.propTypes = {
         task: PropTypes.object.isRequired,
