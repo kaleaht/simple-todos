@@ -4,7 +4,7 @@ import moment from 'moment';
 import {Tasks} from '../api/tasks.js';
 import FontAwesome  from 'react-fontawesome';
 import Check from './Check.jsx';
-import css from './scss/Task.scss';
+import scss from './scss/Task.scss';
 
 export default class Task extends Component {
     constructor(props) {
@@ -28,7 +28,7 @@ export default class Task extends Component {
         moment.updateLocale('fi', fi);
 
         return (
-            <li className={taskClassName} style={css}>
+            <li className={taskClassName} style={scss}>
                 <div>
                     <Check
                         checked={this.props.task.checked}

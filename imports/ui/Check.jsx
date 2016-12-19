@@ -11,7 +11,6 @@ export default class Check extends Component {
         return (
             <FontAwesome
                 name={check}
-                size='2x'
                 onClick={this.props.click}
                 style={styles}/>
         );
